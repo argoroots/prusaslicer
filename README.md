@@ -1,6 +1,6 @@
 # PrusaSlicer profiles: Prusa CORE One INDX with a 0.25 nozzle and TPU
 
-Custom PrusaSlicer presets for a CORE One INDX (8-tool) with a modified tool setup: tools 1–7 keep the stock HF 0.4 nozzles, tool 8 carries a standard-flow 0.25 nozzle for fine detail. Also adds Fillamentum Flexfill 98A (semi-flexible TPU) for the 0.4 tools.
+Custom PrusaSlicer presets for a CORE One INDX (8-tool) with a modified tool setup: tools 1–6 keep the stock HF 0.4 nozzles, tool 7 carries a standard-flow 0.4 nozzle dedicated to flexible filaments (TPU/TPE; high-flow nozzles are not ideal for them), and tool 8 a standard-flow 0.25 nozzle for fine detail. Also adds Fillamentum Flexfill 98A (semi-flexible TPU).
 
 Prusa ships no 0.25-nozzle or flex profiles for INDX, so every preset here is a copy of a Core One / Core One+ system profile with a handful of targeted edits. This document lists each preset, its base profile, and every changed setting with old value, new value, and reason — enough to rebuild or extend the setup from scratch.
 
@@ -12,22 +12,23 @@ Configuration → Configuration Wizard → Prusa Research, tick:
 
 - **Prusa CORE One INDX 8T** (HF0.4) — base for the printer profile; also install its filament profiles
 - **Prusa CORE One+ — 0.25 nozzle variant** — parent of the print profile and the PLA/PETG copies
-- **Prusa CORE One+ — HF0.4 nozzle variant** — parent of the Flexfill copy (source of the `@COREONE+` flex profile)
+- **Prusa CORE One+ — HF0.4 nozzle variant** — starting point for the Flexfill copy. (For Flexfill only one system profile exists regardless of variant, but other filaments may show a different profile per printer variant — always copy with the intended printer active.)
 
 In the wizard's Filaments tab make sure Prusament PLA, Prusament PETG, and the Flexfill/FLEX profiles are ticked for those printers. Without these parents the custom presets fail to load (`inherits` can't resolve) — required on every machine before importing the bundle.
 
 ## Printer
 
-### `Prusa CORE One INDX 7T HF0.4 + 1T 0.25 nozzle`
+### `Prusa CORE One INDX 6T HF0.4 + 1T 0.4 + 1T 0.25 nozzle`
 
 Copy of system printer profile: **Prusa CORE One INDX 8T HF0.4 nozzle**
 
 | Setting | From | To | Why |
 |---|---|---|---|
+| Extruder 7 → High flow | on | off | tool 7 is dedicated to flexible filaments (TPU/TPE); high-flow nozzles are not ideal for them |
 | Extruder 8 → Nozzle diameter | 0.4 | 0.25 | physical nozzle on tool 8 |
 | Extruder 8 → High flow | on | off | the 0.25 is a standard-flow nozzle |
 
-Also set tool 8 to 0.25 / standard in the printer's own tool settings (firmware nozzle check).
+Also register tools 7 and 8 with their real nozzle size/type in the printer's own tool settings (firmware nozzle check).
 
 ## Print settings
 
@@ -43,7 +44,7 @@ Copy of system print profile: **0.12mm STRUCTURAL @COREONE 0.25**
 
 ### `Fillamentum Flexfill 98A @INDX`
 
-Copy of system filament profile: **Fillamentum Flexfill 98A** (Core One+ HF0.4 nozzle)
+Copy of system filament profile: **Fillamentum Flexfill 98A** (copied with the Core One+ HF0.4 nozzle printer active; Flexfill has a single system profile, no separate HF variant)
 
 | Setting | From | To | Why |
 |---|---|---|---|
