@@ -10,9 +10,11 @@ Created with PrusaSlicer 2.9.6 (firmware 6.6.x).
 
 Configuration → Configuration Wizard → Prusa Research, tick:
 
-- **Prusa CORE One INDX 8T** (HF0.4) — base for the printer profile; also install its filament profiles
-- **Prusa CORE One+ — 0.25 nozzle variant** — parent of the print profile and the PLA/PETG copies
-- **Prusa CORE One+ — HF0.4 nozzle variant** — starting point for the Flexfill copy. (For Flexfill only one system profile exists regardless of variant, but other filaments may show a different profile per printer variant — always copy with the intended printer active.)
+- **Prusa CORE One INDX 8T** (HF0.4) — base for the printer profile
+- **Prusa CORE One+** (HF0.4) — base for the Flexfill profile
+- **Prusa CORE One+** (0.25) — base for the print profile and the PLA/PETG profiles
+
+Filament profiles can differ per printer variant — always copy with the intended printer active.
 
 In the wizard's Filaments tab make sure Prusament PLA, Prusament PETG, and the Flexfill/FLEX profiles are ticked for those printers. Without these parents the custom presets fail to load (`inherits` can't resolve) — required on every machine before importing the bundle.
 
@@ -25,7 +27,7 @@ Copy of system printer profile: **Prusa CORE One INDX 8T HF0.4 nozzle**
 | Setting | From | To | Why |
 |---|---|---|---|
 | Extruder 7 → High flow | on | off | tool 7 is dedicated to flexible filaments (TPU/TPE); high-flow nozzles are not ideal for them |
-| Extruder 8 → Nozzle diameter | 0.4 | 0.25 | physical nozzle on tool 8 |
+| Extruder 8 → Nozzle diameter | 0.4 | 0.25 | tool 8 is dedicated to fine detail printing |
 | Extruder 8 → High flow | on | off | the 0.25 is a standard-flow nozzle |
 
 Also register tools 7 and 8 with their real nozzle size/type in the printer's own tool settings (firmware nozzle check).
@@ -44,7 +46,7 @@ Copy of system print profile: **0.12mm STRUCTURAL @COREONE 0.25**
 
 ### `Fillamentum Flexfill 98A @INDX`
 
-Copy of system filament profile: **Fillamentum Flexfill 98A** (copied with the Core One+ HF0.4 nozzle printer active; Flexfill has a single system profile, no separate HF variant)
+Copy of system filament profile: **Fillamentum Flexfill 98A** (Core One+ HF0.4)
 
 | Setting | From | To | Why |
 |---|---|---|---|
@@ -53,7 +55,7 @@ Copy of system filament profile: **Fillamentum Flexfill 98A** (copied with the C
 
 ### `Prusament PETG @INDX 0.25`
 
-Copy of system filament profile: **Prusament PETG** (Core One+ 0.25 nozzle)
+Copy of system filament profile: **Prusament PETG** (Core One+ 0.25)
 
 | Setting | From | To | Why |
 |---|---|---|---|
@@ -63,7 +65,7 @@ Copy of system filament profile: **Prusament PETG** (Core One+ 0.25 nozzle)
 
 ### `Prusament PLA @INDX 0.25`
 
-Copy of system filament profile: **Prusament PLA** (Core One+ 0.25 nozzle)
+Copy of system filament profile: **Prusament PLA** (Core One+ 0.25)
 
 | Setting | From | To | Why |
 |---|---|---|---|
