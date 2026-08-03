@@ -1,6 +1,10 @@
-# PrusaSlicer: CORE One INDX — 0.25 nozzle on tool 8 + Flexfill TPU
+# PrusaSlicer profiles: Prusa CORE One INDX with a 0.25 nozzle and TPU
 
-PrusaSlicer 2.9.6. Prusa ships no 0.25 or flex profiles for INDX, so these were derived from Core One(+) system profiles. Only the listed values were changed; everything else stays inherited from the base preset.
+Custom PrusaSlicer presets for a CORE One INDX (8-tool) with a modified tool setup: tools 1–7 keep the stock HF 0.4 nozzles, tool 8 carries a standard-flow 0.25 nozzle for fine detail. Also adds Fillamentum Flexfill 98A (semi-flexible TPU) for the 0.4 tools.
+
+Prusa ships no 0.25-nozzle or flex profiles for INDX, so every preset here is a copy of a Core One / Core One+ system profile with a handful of targeted edits. This document lists each preset, its base profile, and every changed setting with old value, new value, and reason — enough to rebuild or extend the setup from scratch.
+
+Created with PrusaSlicer 2.9.6 (firmware 6.6.x).
 
 ## Prerequisites — system profiles to install first
 
@@ -39,8 +43,7 @@ Copy of system print profile: **0.12mm STRUCTURAL @COREONE 0.25**
 
 ### `Fillamentum Flexfill 98A @INDX`
 
-Copy of system filament profile: **Fillamentum Flexfill 98A** (Core One+ HF0.4 nozzle)  
-Used on the HF 0.4 tools.
+Copy of system filament profile: **Fillamentum Flexfill 98A** (Core One+ HF0.4 nozzle)
 
 | Setting | From | To | Why |
 |---|---|---|---|
