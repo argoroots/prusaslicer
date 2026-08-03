@@ -8,7 +8,7 @@ Configuration → Configuration Wizard → Prusa Research, tick:
 
 - **Prusa CORE One INDX 8T** (HF0.4) — base for the printer profile; also install its filament profiles
 - **Prusa CORE One+ — 0.25 nozzle variant** — parent of the print profile and the PLA/PETG copies
-- **Prusa CORE One+ — 0.4 nozzle variant** — parent of the Flexfill copy (source of the `@COREONE+` flex profile)
+- **Prusa CORE One+ — HF0.4 nozzle variant** — parent of the Flexfill copy (source of the `@COREONE+` flex profile)
 
 In the wizard's Filaments tab make sure Prusament PLA, Prusament PETG, and the Flexfill/FLEX profiles are ticked for those printers. Without these parents the custom presets fail to load (`inherits` can't resolve) — required on every machine before importing the bundle.
 
@@ -39,7 +39,7 @@ Copy of system print profile: **0.12mm STRUCTURAL @COREONE 0.25**
 
 ### `Fillamentum Flexfill 98A @INDX`
 
-Copy of system filament profile: **Fillamentum Flexfill 98A** (Core One+)  
+Copy of system filament profile: **Fillamentum Flexfill 98A** (Core One+ HF0.4 nozzle)  
 Used on the HF 0.4 tools.
 
 | Setting | From | To | Why |
@@ -88,7 +88,7 @@ Copy of system filament profile: **Prusament PLA** (Core One+ 0.25 nozzle)
 
 ## Transfer
 
-File → Export → Export Config Bundle. On the target: run Configuration Wizard first (Core One+ 0.25 + INDX printers, needed for `inherits` to resolve), then Import Config Bundle.
+File → Export → Export Config Bundle. On the target: run Configuration Wizard first (Core One+ 0.25 and HF0.4 variants + INDX printers, needed for `inherits` to resolve), then Import Config Bundle.
 
 ## After PrusaSlicer / system profile updates
 
